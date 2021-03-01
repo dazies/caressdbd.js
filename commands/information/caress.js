@@ -2,8 +2,8 @@ module.exports = ({
   name: "caress",
   aliases: ["abtme", "cbot"],
   code: `$botTyping
-$title[Hello $servername I am Caress!]
-$description[I have 40+ commands are ready for you to use!\n\n Here are my owners: <@$botOwnerID>] 
+$title[Hello "$servername" I am Caress!]
+$description[Total comands: **$commandsCount**\n\n Here are my owners: <@$botOwnerID>] 
   $thumbnail[$randomText[
   https://media.giphy.com/media/fwo7bzEVxbYS4eSNVd/giphy.gif;
   https://media.giphy.com/media/j3mdQpQ9SKxFOWs9gy/giphy.gif;

@@ -60,14 +60,6 @@ bot.variables({
   spiteful: "0",
   afk: "",
   afkwhy: "No reason given",
-	  number: "123",
- language: "en",
-  insult: "You're a failed abortion whose birth certificate is an apology from the condom factory.",
-  created: "2018-10-24 06:52:02",
-  shown: "2688",
-  createdby: "someone",
-  active: "1",
-  comment: "Sourced from some website",
 });
 
 
@@ -117,20 +109,30 @@ bot.status({
 
 
 bot.joinCommand({
-  channel: "805802470407143426",
+  channel: "816039349317140480",
   code: `$title[Welcome to $serverName!]
-  $description[@$username]
-  $color[PURPLE]
+  $description[<@$authorID>]
+  $color[36393E]
   $footer[Invite your friends!!  ♡ ♡ ♡]
   $addTimestamp
-  $thumbnail[$authorAvatar]`
-  /*
-                Code Breakdown
-        $serverName - The name of the server the user joined
-        $username - The user who joined the server
-        */
+	$thumbnail[$authorAvatar]`
 });
-bot.onJoined();
+bot.onJoin();
+
+bot.leaveCommand({
+  channel: "816039367042531378",
+  code: `$title[$username has left $servername]
+  $description[<@$authorID>]
+  $color[36393E]
+  $footer[come again!  ♡ ♡ ♡]
+  $addTimestamp
+	$thumbnail[$authorAvatar]`
+});
+bot.onLeave();
+
+
+
+
 
 bot.command({
   name: "<@806148573874880552>",
@@ -150,13 +152,6 @@ $color[RANDOM]`,
   nonPrefixed: true
 });
 
-//snipe command on message delete
-bot.deletedCommand({
-  channel: "$channelID",
-  code: `
-$setServerVar[Snipe;$message]`
-});
-//end
 
 //rps awaited
 bot.awaitedCommand({
@@ -199,7 +194,7 @@ bot.awaitedCommand({
 
 bot.awaitedCommand({
  name: "helpInfo",
- code: `$editMessage[$message[1];{color:GREEN}{author:Help}{title:Information}{description:Information Commands}{field:*<command>:acpfp, afk, avatar, bot, calculate, caress, covid, dazies, help, invites, navigate, ping, rank, servericon, serverinfo, snipe, test, translate, urban, userinfo, weather,:yes}{footer:🔄 - Return to Home Page}{timestamp:ms}]`
+ code: `$editMessage[$message[1];{color:GREEN}{author:Help}{title:Information}{description:Information Commands}{field:*<command>:acpfp, afk, avatar, bot, calculate, caress, covid, dazies, help, invites, navigate, ping, rank, servericon, serverinfo, snipe, test, translate, urban, userinfo, weather, google, anime, manga :yes}{footer:🔄 - Return to Home Page}{timestamp:ms}]`
 })
 
 bot.awaitedCommand({
@@ -209,7 +204,7 @@ bot.awaitedCommand({
 
 bot.awaitedCommand({
  name: "helpFun",
- code: `$editMessage[$message[1];{color:GREEN}{author:Help}{title:Fun}{description:Fun Commands}{field:*<command>:anime, cat, coinflip, covidtest, dog, epicgamer, esteal, fourtune-cookie, guess, hack, howgay,  hug, joke, kill, kiss, loverate, meme, panda, pp, quote, randcolor, randemoji, rate, rps, say, ship, tableflip, waifu:yes}{footer:🔄 - Return to Home Page}{timestamp:ms}]`
+ code: `$editMessage[$message[1];{color:GREEN}{author:Help}{title:Fun}{description:Fun Commands}{field:*<command>:cat, coinflip, covidtest, dog, epicgamer, esteal, fourtune-cookie, guess, hack, howgay,  hug, joke, kill, kiss, loverate, meme, panda, pp, quote, randcolor, randemoji, rate, rps, say, ship, tableflip,roast, waifu, owoify, sarcastic, fact, cmm, rip, invert  :yes}{footer:🔄 - Return to Home Page}{timestamp:ms}]`
 })
 
 bot.awaitedCommand({
@@ -459,4 +454,4 @@ bot.readyCommand({
   https://cdn.glitch.com/1566e8aa-86d0-4813-82fd-e9b536cacae7%2F0d9822ed-b699-46d0-a245-8c43b6f6c8fd.image.png?1613082174428
   ]]
     `
-})
+})const Database = require("@replit/database")const db = new Database()db.set("key", "value").then(() => {});db.get("key").then(value => {});db.delete("key").then(() => {});db.list().then(keys => {});db.list("prefix").then(matches => {});

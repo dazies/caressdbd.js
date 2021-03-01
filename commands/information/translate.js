@@ -1,7 +1,6 @@
 module.exports =({
 	  name: "translate",
   code: `
-Text: $message
-Translated text: $jsonRequest[https://api.somecool.repl.co/translate?text=$message;translated]
-Translated from: $jsonRequest[https://api.somecool.repl.co/translate?text=$message;translated_from]`
+name: "translate",
+code: $jsonRequest[https://normal-api.ml/translate?text=$replaceText[$message[2]; ;$20;-1]&to=$message[1];translated]`
 });
