@@ -111,20 +111,23 @@ bot.status({
 bot.joinCommand({
   channel: "816039349317140480",
   code: `$title[Welcome to $serverName!]
-  $description[<@$authorID>]
+  $description[<@$authorID>
+	There is now $membersCount members]
   $color[36393E]
   $footer[Invite your friends!!  ♡ ♡ ♡]
   $addTimestamp
 	$thumbnail[$authorAvatar]`
 });
-bot.onJoin();
+bot.onJoined();
+
 
 bot.leaveCommand({
   channel: "816039367042531378",
   code: `$title[$username has left $servername]
-  $description[<@$authorID>]
+  $description[ <@$authorID>
+	There is now $membersCount members]
   $color[36393E]
-  $footer[come again!  ♡ ♡ ♡]
+  $footer[ There is now $membersCount members | come again!  ♡ ♡ ♡]
   $addTimestamp
 	$thumbnail[$authorAvatar]`
 });
@@ -194,7 +197,7 @@ bot.awaitedCommand({
 
 bot.awaitedCommand({
  name: "helpInfo",
- code: `$editMessage[$message[1];{color:GREEN}{author:Help}{title:Information}{description:Information Commands}{field:*<command>:acpfp, afk, avatar, bot, calculate, caress, covid, dazies, help, invites, navigate, ping, rank, servericon, serverinfo, snipe, test, translate, urban, userinfo, weather, google, anime, manga :yes}{footer:🔄 - Return to Home Page}{timestamp:ms}]`
+ code: `$editMessage[$message[1];{color:GREEN}{author:Help}{title:Information}{description:Information Commands}{field:*<command>:acpfp, afk, avatar, bot, calculate, caress, covid, dazies, help, invites, navigate, ping, rank, servericon, serverinfo, snipe, test, translate, urban, userinfo, weather, google, anime, manga, rules :yes}{footer:🔄 - Return to Home Page}{timestamp:ms}]`
 })
 
 bot.awaitedCommand({
@@ -204,7 +207,7 @@ bot.awaitedCommand({
 
 bot.awaitedCommand({
  name: "helpFun",
- code: `$editMessage[$message[1];{color:GREEN}{author:Help}{title:Fun}{description:Fun Commands}{field:*<command>:cat, coinflip, covidtest, dog, epicgamer, esteal, fourtune-cookie, guess, hack, howgay,  hug, joke, kill, kiss, loverate, meme, panda, pp, quote, randcolor, randemoji, rate, rps, say, ship, tableflip,roast, waifu, owoify, sarcastic, fact, cmm, rip, invert  :yes}{footer:🔄 - Return to Home Page}{timestamp:ms}]`
+ code: `$editMessage[$message[1];{color:GREEN}{author:Help}{title:Fun}{description:Fun Commands}{field:*<command>:cat, coinflip, covidtest, dog, epicgamer, esteal, fourtune-cookie, guess, hack, howgay,  hug, joke, kill, kiss, loverate, meme, panda, pp, quote, randcolor, randemoji, rate, rps, say, ship, tableflip,roast, waifu, owoify, sarcastic, fact, cmm, rip, invert, drip, slap, emergency, simp, reverse, milkyou, tweet, worthless :yes}{footer:🔄 - Return to Home Page}{timestamp:ms}]`
 })
 
 bot.awaitedCommand({
@@ -454,4 +457,4 @@ bot.readyCommand({
   https://cdn.glitch.com/1566e8aa-86d0-4813-82fd-e9b536cacae7%2F0d9822ed-b699-46d0-a245-8c43b6f6c8fd.image.png?1613082174428
   ]]
     `
-})const Database = require("@replit/database")const db = new Database()db.set("key", "value").then(() => {});db.get("key").then(value => {});db.delete("key").then(() => {});db.list().then(keys => {});db.list("prefix").then(matches => {});
+})
